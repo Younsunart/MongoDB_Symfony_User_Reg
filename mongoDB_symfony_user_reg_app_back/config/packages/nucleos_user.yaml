@@ -1,0 +1,5 @@
+nucleos_user:
+    db_driver: mongodb
+    firewall_name: main
+    from_email: '%env(MAIL_SENDER)%'
+    user_class: 'App\Document\User'

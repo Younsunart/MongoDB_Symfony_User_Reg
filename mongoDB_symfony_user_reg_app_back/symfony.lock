@@ -73,6 +73,23 @@
     "doctrine/migrations": {
         "version": "3.1.1"
     },
+    "doctrine/mongodb-odm": {
+        "version": "2.2.0"
+    },
+    "doctrine/mongodb-odm-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "1fd8598bf42227a1c8905edd32f640e4c5d15eff"
+        },
+        "files": [
+            "config/packages/doctrine_mongodb.yaml",
+            "config/packages/prod/doctrine_mongodb.yaml",
+            "src/Document/.gitignore"
+        ]
+    },
     "doctrine/orm": {
         "version": "2.8.3"
     },
@@ -88,6 +105,9 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.3"
     },
+    "jean85/pretty-package-versions": {
+        "version": "1.6.0"
+    },
     "laminas/laminas-code": {
         "version": "4.1.0"
     },
@@ -97,11 +117,32 @@
     "laminas/laminas-zendframework-bridge": {
         "version": "1.2.0"
     },
+    "mongodb/mongodb": {
+        "version": "1.8.0"
+    },
     "monolog/monolog": {
         "version": "2.2.0"
     },
     "nikic/php-parser": {
         "version": "v4.10.4"
+    },
+    "nucleos/user-bundle": {
+        "version": "1.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.1",
+            "ref": "88cca294afe46854e805316dbcde52696c661ce6"
+        },
+        "files": [
+            "config/packages/nucleos_user.yaml",
+            "config/routes/nucleos_user.yaml",
+            "src/Entity/User/Group.php",
+            "src/Entity/User/User.php"
+        ]
+    },
+    "paragonie/random_compat": {
+        "version": "v9.99.100"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"

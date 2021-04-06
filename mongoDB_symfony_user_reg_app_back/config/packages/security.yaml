@@ -1,24 +1,27 @@
 security:
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    encoders:
+        Nucleos\UserBundle\Model\UserInterface: auto
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
     providers:
-        users_in_memory: { memory: null }
+        nucleos_userbundle:
+            id: nucleos_user.user_provider.username
+
     firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
         main:
-            anonymous: true
-            lazy: true
-            provider: users_in_memory
+            pattern: ^/
+            user_checker: Nucleos\UserBundle\Security\UserChecker
+            form_login:
+                provider: nucleos_userbundle
+                csrf_token_generator: security.csrf.token_manager
 
-            # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#firewalls-authentication
+            logout:       true
+            anonymous:    true
 
-            # https://symfony.com/doc/current/security/impersonating_user.html
-            # switch_user: true
-
-    # Easy way to control access for large sections of your site
-    # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/change-password, role: IS_AUTHENTICATED_REMEMBERED }
+        # If you have an admin backend, uncomment the following line
+        # - { path: ^/admin/, role: ROLE_ADMIN }
