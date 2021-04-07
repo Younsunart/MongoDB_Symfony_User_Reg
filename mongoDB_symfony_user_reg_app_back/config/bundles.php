@@ -13,4 +13,6 @@ return [
     Symfony\Bundle\SecurityBundle\SecurityBundle::class => ['all' => true],
     Twig\Extra\TwigExtraBundle\TwigExtraBundle::class => ['all' => true],
     Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle::class => ['all' => true],
+    Nucleos\UserBundle\NucleosUserBundle::class => ['all' => true],
+    Nucleos\ProfileBundle\NucleosProfileBundle::class => ['all' => true],
 ];

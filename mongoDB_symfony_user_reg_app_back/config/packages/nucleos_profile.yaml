@@ -1,0 +1,4 @@
+nucleos_profile:
+    registration:
+        confirmation:
+            from_email:  "test@test.com"
